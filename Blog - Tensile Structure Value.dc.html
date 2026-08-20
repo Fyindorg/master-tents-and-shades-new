@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<dc-import name="BlogPost" hint-size="100%,1600px" dc-props="{{ p }}"></dc-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return { p: {
+      dayNum: '24', views: '25285',
+      img: 'img/Tensile-Shades-861x646x0x0x860x646x1721112646.webp',
+      date: '11/07/2024', time: '4:32 AM',
+      title: 'How Can Tensile Structure Gives Good Value',
+      intro: 'A tensile structure adds real value to a property by adding aesthetic appeal, providing shade and shelter, and creating usable outdoor living space. Before committing to one, it helps to understand the key questions to work through.',
+      sections: [
+        { heading: 'What Is the Primary Purpose of the Structure', body: 'A tensile structure\u2019s main job is to provide shade and shelter. A flexible membrane, supported by cables or beams, forms a three-dimensional shape able to withstand wind and other loads, suited to shading outdoor areas, covering walkways, or sheltering equipment.' },
+        { heading: 'What Are the Space Requirements', body: 'The amount of space a tensile structure needs depends on its size and the shape you want to achieve — it\u2019s worth planning the footprint carefully before committing to a design.' },
+        { heading: 'What Is the Desired Aesthetic', body: 'Since a tensile structure becomes a visible feature of the property, it\u2019s worth deciding early whether it should blend into its surroundings or stand out with a bolder color and form.' },
+        { heading: 'What Is the Budget', body: 'Costs vary with the size and complexity of the structure, covering both installation and ongoing maintenance — getting a clear estimate upfront avoids surprises later.' },
+        { heading: 'What Is the Timeline for Installation', body: 'Installation time depends on the size, design complexity, and site conditions, but most tensile shade structures can be completed within a few days to a few weeks.' },
+      ],
+    } };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<dc-import name="ProductPage" hint-size="100%,2000px" dc-props="{{ productProps }}"></dc-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      productProps: {
+        heroImg: 'img/wedding-tent.jpeg',
+        heroPos: '56% 41%',
+        heroTitle: 'Wedding Tent',
+        blocks: [
+          { t: 'h1', text: 'Wedding Tent Rentals in Dubai for Outdoor Weddings, Garden Receptions and Beach Events', align: 'center' },
+          { t: 'p', text: 'Our team of experienced professionals will work closely with you to understand your requirements and provide you with the best wedding tent rental solution that suits your needs. We take care of all the details from installation to dismantling, ensuring that your wedding day goes smoothly and stress-free. Our tents are made from high-quality materials that are durable and weather-resistant, ensuring that your guests are comfortable and protected from the elements.' },
+          { t: 'p', text: 'In addition to wedding tent rentals, we also offer a range of other services such as lighting, flooring, furniture, and decor to enhance the ambiance of your wedding venue. Our team is dedicated to providing exceptional customer service and ensuring that your wedding day is a memorable and special occasion. Contact us today to learn more about our wedding tent rental services and how we can help make your wedding day a truly unforgettable experience.' },
+          { t: 'h1', text: 'Wedding Tent for Rent', align: 'center' },
+          { t: 'p', text: 'Master Tents & Shades LLC offers a variety of wedding tents for rent in the UAE, catering to weddings of all sizes. They provide modern and traditional Arabic tents based on your needs. Consider the size of your wedding and number of guests when choosing a tent. They have two main categories of wedding rental tents.' },
+        ],
+        relatedProducts: ['Event Tents','Steel Tents','Aluminium Tents','Labor Tents','Wedding Tents','High Peak Tents','Gazebo Tents','Dome Tents'],
+        relatedOther: ['Car Parking Shades','Pergola Shades','Cat Ladders','Umbrellas','Awnings','Steel Works','Tensile Shades','Swimming Pool Shades'],
+      },
+    };
+  }
+}
+</script>
+</body>
+</html>

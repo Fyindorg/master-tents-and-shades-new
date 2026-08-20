@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<dc-import name="ProductPage" hint-size="100%,2000px" dc-props="{{ productProps }}"></dc-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      productProps: {
+        heroImg: 'img/Event-tent.jpeg',
+        heroPos: '55% 29%',
+        heroTitle: 'Event Tent',
+        blocks: [
+          { t: 'h1', text: 'Event Tent Suppliers in Dubai for Corporate Events, Exhibitions and Outdoor Parties', align: 'center' },
+          { t: 'p', text: 'Master Tents and Sheds LLC is a reputable manufacturer and supplier of event and party tents based in Dubai, UAE. We have extensive range of event tents offers versatility and adaptability, allowing for the creation of various atmospheres tailored to different types of events. These tents are suitable for a wide array of occasions such as banquets, business exhibitions, product launches, promotions, and advertising campaigns, among others. The company is dedicated to delivering exceptional and guaranteed services characterized by professionalism, efficiency, precision, reliability, exclusivity, and attentiveness, ensuring that clients can fully immerse themselves in their activities. Master Tents and Sheds LLC stands out for providing top-notch event tent rentals needs with excellence.' },
+        ],
+        relatedProducts: ['Event Tents','Steel Tents','Aluminium Tents','Labor Tents','Wedding Tents','High Peak Tents','Gazebo Tents','Dome Tents'],
+        relatedOther: ['Car Parking Shades','Pergola Shades','Cat Ladders','Umbrellas','Awnings','Steel Works','Tensile Shades','Swimming Pool Shades'],
+      },
+    };
+  }
+}
+</script>
+</body>
+</html>

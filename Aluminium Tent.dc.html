@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<dc-import name="ProductPage" hint-size="100%,2000px" dc-props="{{ productProps }}"></dc-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      productProps: {
+        heroImg: 'img/aluminum-tent_11zon.jpeg',
+        heroPos: '55% 29%',
+        heroTitle: null,
+        blocks: [
+          { t: 'h1', text: 'Aluminium Tent Shades Suppliers', align: 'center' },
+          { t: 'p', text: 'Master Aluminum tent shades, unlike traditional options, is designed for easy transportation due to its lightweight and compact packing size. Setting it up is quick and convenient, as it features no loose parts that can be easily misplaced. These unique characteristics set our pagoda gazebos apart from the standard models available in the market.', align: 'left' },
+          { t: 'p', text: 'The versatility of an average-sized pagoda tent allows it to seamlessly blend into various venues, offering exceptional value and practicality. Furthermore, the open design of the tent creates a spacious and airy atmosphere, making it an attractive choice for clients across a wide range of industries.', align: 'left' },
+        ],
+        relatedProducts: ['Event Tents','Steel Tents','Aluminium Tents','Labor Tents','Wedding Tents','High Peak Tents','Gazebo Tents','Dome Tents'],
+        relatedOther: ['Car Parking Shades','Pergola Shades','Cat Ladders','Umbrellas','Awnings','Steel Works','Tensile Shades','Swimming Pool Shades'],
+      },
+    };
+  }
+}
+</script>
+</body>
+</html>

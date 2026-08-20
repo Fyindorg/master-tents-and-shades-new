@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<dc-import name="InfoPage" hint-size="100%,2000px" dc-props="{{ p }}"></dc-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return { p: {
+      heroImg: 'img/Bioclimatic-Pergola-Sytems.webp', heroPos: '55% 29%', heroTitle: 'Bioclimatic Pergola',
+      sections: [
+        { cols: [[
+          { t: 'h1', text: 'Bioclimatic Pergola in Dubai for Homes, Restaurants and Resort Outdoor Spaces', align: 'center' },
+          { t: 'p', text: 'Suppliers of bioclimatic pergola shades are well-trained professionals with extensive experience in providing top-notch, tailored shading solutions for outdoor environments. They focus on various bioclimatic pergolas, which are advanced structures crafted to efficiently manage sunlight exposure and air circulation outdoors. Suppliers of bioclimatic pergola shades usually present a variety of design choices, materials, and finishes to accommodate diverse preferences and financial plans. A Bioclimatic Pergola is fundamentally a modern system which gives you the power to control any weather conditions with the use of a motorized louvered roof. This allows you to regulate and monitor how much shade and sunlight enters the Pergola through opening and closing the roof at your desired angle! The CE certified IP67 motor which powers the roof is discretely hidden to provide you with a stylish and elegant finish. By using a remote control, you can adjust the roof blades to any angled position to offer natural ventilation for your Bioclimatic Pergola! Each louvered panel is fitted with a rubber strip to prevent any drafts from entering the Pergola. This also gives you full control in regulating the desired temperature for you to relax and unwind without the worry of being too hot or cold!' },
+        ]] },
+        { cols: [
+          [ { t: 'p', text: 'Bioclimatic Pergola Features', align: 'center', bold: true, serif: true },
+            { t: 'p', text: 'Master Tents and Shades specializes in providing durable and stylish Pergola shades for outdoor spaces, offering an attractive and long-lasting solution. Their Fabric Glass Pergolas in Dubai are designed to be 100% waterproof, ensuring protection from the elements. Unlike traditional wood pergolas, the structural Fiber Pergolas used in their kits are created through a process called pultrusion. This process enhances the fiberglass pieces with exceptional strength while keeping them lightweight.' },
+            { t: 'p', text: 'These Fiber Pergolas are resistant to bending, warping, rotting, or becoming a target for insects. Additionally, they do not expand or contract with seasonal changes, ensuring stability and longevity. Apart from their durability, these pergolas offer a wide range of design options, making them versatile for various outdoor settings.' },
+          ],
+          [ { t: 'p', text: 'Bioclimatic Pergola Developers', align: 'center', bold: true, serif: true },
+            { t: 'p', text: 'The structures are designed with a focus on creating a comfortable outdoor space that offers shade and protection from the elements. They utilize various elements such as adjustable louvers, retractable awnings, and plant-covered trellises to help regulate temperature and enhance natural ventilation. By incorporating these features, the pergolas aim to reduce the need for artificial cooling systems, promoting energy efficiency and sustainability in architectural design. This approach makes them a sought-after option for eco-conscious projects that prioritize environmental considerations.' } ],
+        ] },
+      ],
+    } };
+  }
+}
+</script>
+</body>
+</html>

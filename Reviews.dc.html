@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  body { margin: 0; font-family: 'Montserrat', -apple-system, 'Segoe UI', Roboto, sans-serif; color: #334155; }
+  a { color: #BEA16A; text-decoration: none; }
+  a:hover { color: #1F4357; }
+</style>
+</helmet>
+
+<dc-import name="Header" hint-size="100%,140px"></dc-import>
+
+<section style="position:relative;height:420px;overflow:hidden;background-image:url(img/Master-Review.webp);background-size:cover;background-position:54% 47%;display:flex;align-items:flex-end;">
+  <div style="position:absolute;inset:0;background:rgba(0,0,0,0.25);"></div>
+  <div style="position:relative;max-width:1200px;margin-inline:auto;padding:0 15px 24px 15px;width:100%;">
+    <p style="margin:0;text-align:center;font-family:'DM Serif Text',Georgia,serif;font-size:50px;font-weight:400;color:#ffffff;">Reviews</p>
+  </div>
+</section>
+
+<main>
+  <section style="padding:30px 0 40px 0;">
+    <div style="max-width:1200px;margin-inline:auto;padding-inline:15px;">
+      <p style="margin:0 0 12px 0;text-align:center;font-family:'DM Serif Text',Georgia,serif;font-size:25px;font-weight:400;color:#1F4357;">Our Valuable Clients</p>
+      <p style="margin:0 0 32px 0;text-align:center;font-size:16px;line-height:1.7;color:#2D3842;">We are proud to have a 4.8-star rating on Google with over 100 reviews. Our customers consistently praise our excellent service, knowledgeable staff, and high-quality products. Thank you to all our customers for their support and feedback!</p>
+
+      <sc-for list="{{rows}}" as="row" hint-placeholder-count="6">
+        <div style="display:flex;flex-wrap:wrap;gap:18px;margin-bottom:18px;">
+          <sc-for list="{{row}}" as="r" hint-placeholder-count="3">
+            <div style="flex:1 1 260px;border-radius:10px;border:1px solid #c9ab77;background:#ffffff;padding:22px 28px;">
+              <p style="margin:0 0 6px 0;font-size:20px;font-weight:500;letter-spacing:1.1px;color:#1F4357;">{{ r.name }}</p>
+              <div style="margin-bottom:10px;display:flex;align-items:center;gap:10px;">
+                <span style="font-size:16px;color:#1F4357;">Rating</span>
+                <span style="color:#bea16a;letter-spacing:2px;">★★★★★</span>
+              </div>
+              <p style="margin:0;font-size:16px;line-height:1.8;color:#1F4357;">{{ r.text }}</p>
+            </div>
+          </sc-for>
+        </div>
+      </sc-for>
+
+      <div style="text-align:center;margin-top:16px;">
+        <a href="https://g.page/r/CTfJayOFQ2Z4EBM/review" target="_blank" rel="noopener noreferrer" style="display:inline-block;border-radius:15px;border:1px solid #9e9e9e;background:#ffffff;padding:6px 25px;font-size:16px;color:#1F4357;">Read More</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<dc-import name="Footer" hint-size="100%,400px"></dc-import>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      rows: [
+        [
+          { name: 'Asha Vishali', text: 'Pergola provides shade, shelter, and protection for the vehicles which are parked in an open area. You did great!' },
+          { name: 'Eharaz Aquib', text: 'Great car parking shades manufacturing company. High quality.' },
+        ],
+        [
+          { name: 'Amjad Muneer', text: 'Great service with on time delivery & competitive price recommend.' },
+          { name: 'Latha Balla', text: 'Great service by the way, you guys are amazing 🙂' },
+          { name: 'Muhammadrehan Zong', text: 'Good works professional persons and fastest work done!' },
+        ],
+        [
+          { name: 'Probusiness Accounting Services', text: 'High quality works & timely delivery @ competitive prices. Keep it up.' },
+        ],
+        [
+          { name: 'Tahir  Sorathia', text: 'Good Service, Exccelent work good job team Master.' },
+          { name: 'HM Hanif', text: "Dome shade install by master team.... Good work 👍" },
+          { name: 'Habeeb Rahman', text: 'Excellent design and installation, Good job master shades team/' },
+        ],
+        [
+          { name: 'Avinash Geddam', text: 'Just go for it, best company in United Arab Emirates, thank you for your service, kudos to entire team!!!' },
+          { name: 'Krupakar Yadla', text: 'Very unique and high qulity service, very greatful for the work done!!!' },
+          { name: 'YMV Prasad', text: 'Best service in Dubai. Affordable Price and Stylish Designs.' },
+        ],
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

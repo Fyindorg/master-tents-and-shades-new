@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  body { margin: 0; font-family: 'Montserrat', -apple-system, 'Segoe UI', Roboto, sans-serif; color: #334155; }
+  a { color: #BEA16A; text-decoration: none; }
+  a:hover { color: #1F4357; }
+</style>
+</helmet>
+
+<dc-import name="Header" hint-size="100%,140px"></dc-import>
+
+<section style="position:relative;height:420px;overflow:hidden;background-image:url(img/Automatic-Pergola-in-Dubai.webp);background-size:cover;background-position:58% 29%;display:flex;align-items:flex-end;">
+  <div style="position:absolute;inset:0;background:rgba(0,0,0,0.25);"></div>
+  <div style="position:relative;max-width:1200px;margin-inline:auto;padding:0 15px 24px 15px;width:100%;">
+    <p style="margin:0;text-align:center;font-family:'DM Serif Text',Georgia,serif;font-size:50px;font-weight:400;color:#ffffff;">All kind of pergolas</p>
+  </div>
+</section>
+
+<main>
+  <section style="padding:24px 0 16px 0;">
+    <div style="max-width:1200px;margin-inline:auto;padding-inline:15px;">
+      <h1 style="margin:0 0 16px 0;text-align:center;font-family:'DM Serif Text',Georgia,serif;font-weight:400;font-size:25px;color:#1F4357;line-height:1.3;">Pergola Shade Suppliers in Dubai for Homes, Hotels, Restaurants and Commercial Outdoor Areas</h1>
+      <p style="margin:0 0 16px 0;font-size:16px;line-height:1.7;color:#2D3842;">Master Tents and Sheds LLC manufacturers and suppliers outdoor, garden pergolas car parking shades in UAE, and other Gulf Regions like Oman, and Saudi Arabia. The best way to enjoy outdoor weather is to put a retractable pergola shade or fixed pergola canopy in your garden or somewhere nearby out of your door in any weather condition. Either you want to enjoy your summer season outdoors or winter's shiny sun with cold air, a pergola shade canopy help you in both weather condition to make your outdoor seating area enjoyable.</p>
+      <p style="margin:0 0 16px 0;font-size:16px;line-height:1.7;color:#2D3842;">Our Pergola Shades structure bears a load of 140 Km/hr wind speed.</p>
+      <p style="margin:0 0 16px 0;font-size:16px;line-height:1.7;color:#2D3842;">Master Tents &amp; Sheds LLC provides both waterproof pergolas and non-waterproof pergola shades in Dubai, Sharjah, Abu Dhabi, and all other states UAE. Al Khayam provides supply and installation of retractable pergola canopy and fixed pergolas</p>
+      <p style="margin:0 0 16px 0;font-size:16px;line-height:1.7;color:#334155;">We offer a variety of custom shade solutions for your Pergola – from retractable options to privacy side panels, all available in a wide range of colours.</p>
+      <p style="margin:0 0 16px 0;text-align:center;font-family:'DM Serif Text',Georgia,serif;font-weight:400;font-size:25px;color:#1F4357;">Best Pergola Shade Design 2025</p>
+      <p style="margin:0;font-size:16px;line-height:1.7;color:#2D3842;">Pergola Shades are used for multiple purposes at the outside of the home, in the garden, or parks. These shades come in different sizes, shapes, and types, you can customize them as per your needs and the place where you want to put these shades. To put the Pergola Canopy in your outdoor area you have to decide, what will be its purpose. Either you want a pergola parking shade area or seating area in the garden or out of your doorstep.</p>
+    </div>
+  </section>
+
+  <section style="padding:15px 0;">
+    <div style="max-width:1200px;margin-inline:auto;padding-inline:15px;display:grid;grid-template-columns:repeat(3,1fr);gap:30px 32px;">
+      <sc-for list="{{tiles}}" as="t" hint-placeholder-count="8">
+        <div>
+          <img src="{{ t.img }}" alt="{{ t.label }}" style="width:100%;aspect-ratio:4/3;object-fit:cover;display:block;border-radius:4px;"/>
+          <p style="margin-top:10px;text-align:center;font-size:16px;font-weight:500;color:#BEA16A;">{{ t.label }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section style="padding:30px 0 15px 0;">
+    <div style="max-width:1200px;margin-inline:auto;padding-inline:15px;display:flex;flex-wrap:wrap;gap:32px;">
+      <div style="flex:1 1 480px;display:flex;flex-direction:column;">
+        <p style="margin:0 0 12px 0;text-align:center;font-family:'DM Serif Text',Georgia,serif;font-size:25px;font-weight:400;color:#1F4357;">Why Choose Us</p>
+        <p style="margin:0 0 20px 0;font-size:16px;line-height:1.7;color:#334155;">Our team in Dubai specializes in supplying a diverse range of car parking shades and tents tailored for various sectors, including aviation, sports, and military. We provide customized solutions to meet the specific requirements of each industry, ensuring high-quality and durable structures that cater to their unique needs. Our expertise extends to designing and installing parking shades and tents that are not only functional but also aesthetically pleasing, enhancing the overall environment and functionality of the spaces they serve.</p>
+        <div ref="{{ statsRef }}" style="display:flex;align-items:stretch;margin-top:auto;">
+          <sc-for list="{{stats}}" as="s" hint-placeholder-count="3">
+            <div style="flex:1;padding:0 8px;text-align:center;border-left:1px solid rgba(31,67,87,0.25);">
+              <p style="margin:0;white-space:nowrap;font-size:clamp(14px,1.4vw,20px);font-weight:500;color:#1F4357;">{{ s.label }}</p>
+              <p style="margin:4px 0 0 0;font-size:clamp(34px,3.5vw,50px);line-height:1.2;color:#BEA16A;">{{ s.display }}</p>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+      <div style="flex:1 1 380px;">
+        <p style="margin:0 0 16px 0;text-align:center;font-family:'DM Serif Text',Georgia,serif;font-size:25px;font-weight:400;color:#1F4357;">Get A free Quote!</p>
+        <form onSubmit="{{ onSubmit }}" style="display:flex;flex-direction:column;gap:16px;">
+          <input style="width:100%;box-sizing:border-box;border-radius:10px;border:1px solid rgba(0,0,0,0.15);background:#ffffff;padding:16px 20px;font-size:16px;color:#1F4357;" name="name" placeholder="Name" required="{{ true }}"/>
+          <input style="width:100%;box-sizing:border-box;border-radius:10px;border:1px solid rgba(0,0,0,0.15);background:#ffffff;padding:16px 20px;font-size:16px;color:#1F4357;" name="phone" placeholder="Phone"/>
+          <input style="width:100%;box-sizing:border-box;border-radius:10px;border:1px solid rgba(0,0,0,0.15);background:#ffffff;padding:16px 20px;font-size:16px;color:#1F4357;" name="email" type="email" placeholder="Email" required="{{ true }}"/>
+          <textarea style="width:100%;box-sizing:border-box;border-radius:10px;border:1px solid rgba(0,0,0,0.15);background:#ffffff;padding:16px 20px;font-size:16px;color:#1F4357;" name="message" rows="4" placeholder="Message"></textarea>
+          <button type="submit" style="width:100%;border:none;border-radius:10px;background:#c6ab84;padding:16px 24px;font-size:17px;font-weight:500;color:#ffffff;cursor:pointer;">{{ submitLabel }}</button>
+          <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+            <p style="margin:0;font-size:14px;color:#1F4357;">Thanks — we'll be in touch shortly.</p>
+          </sc-if>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<dc-import name="Footer" hint-size="100%,400px"></dc-import>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { sending: false, sent: false, statsCounts: [0, 0, 0] };
+  statsRef = (el) => {
+    if (!el || this._statsObserved) return;
+    this._statsObserved = true;
+    const targets = [200, 60, 700];
+    const io = new IntersectionObserver((entries) => {
+      if (entries.some((e) => e.isIntersecting)) { this.animateStats(targets); io.disconnect(); }
+    }, { threshold: 0.3 });
+    io.observe(el);
+  };
+  animateStats(targets) {
+    const start = performance.now();
+    const duration = 1600;
+    const tick = (now) => {
+      const p = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - p, 3);
+      this.setState({ statsCounts: targets.map((t) => Math.round(t * eased)) });
+      if (p < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  }
+  onSubmit(e) {
+    e.preventDefault();
+    this.setState({ sending: true });
+    setTimeout(() => this.setState({ sending: false, sent: true }), 500);
+  }
+  renderVals() {
+    return {
+      tiles: [
+        { img: 'img/Wooden-Pergola-Shade-306x230x36x0x232x230x1721992958.webp', label: 'Outdoor Pergola' },
+        { img: 'img/New-Outdoor-Pergola-232x174x0x0x232x174x1721140874.webp', label: 'Garden Pergola' },
+        { img: 'img/Aluminum-pergola-suppliers-232x174x0x0x232x174x1721128395.webp', label: 'Aluminum Pergola' },
+        { img: 'img/Transparent-Pergola-Shade-232x216x0x0x232x216x1721993845.webp', label: 'Outdoor Pergola' },
+        { img: 'img/Motorized-louvered-pergolas-232x154x0x0x232x154x1718795351.webp', label: 'Steel Pergola' },
+        { img: 'img/FIBER-GLASS-PERGOLA-232x174x0x8x232x156x1721140387.webp', label: 'Wooden Pergola' },
+        { img: 'img/Swimming-Pool-Pergola-Shade-232x174x0x0x232x174x1721998090.webp', label: 'Swimming Pool' },
+        { img: 'img/Car-Parking-Pergola-in-Dubai-232x232x0x0x232x232x1721130252.webp', label: 'Car Parking Pergola' },
+      ],
+      stats: [
+        { label: 'Happy Clients', display: this.state.statsCounts[0] },
+        { label: 'Business', display: this.state.statsCounts[1] },
+        { label: 'Completed Projects', display: this.state.statsCounts[2] },
+      ],
+      statsRef: this.statsRef,
+      sent: this.state.sent,
+      submitLabel: this.state.sending ? 'Sending...' : 'Send →',
+      onSubmit: (e) => this.onSubmit(e),
+    };
+  }
+}
+</script>
+</body>
+</html>

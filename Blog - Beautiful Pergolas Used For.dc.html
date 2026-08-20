@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<dc-import name="BlogPost" hint-size="100%,1600px" dc-props="{{ p }}"></dc-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return { p: {
+      dayNum: '24', views: '26745',
+      img: 'img/New-Outdoor-Pergola-861x646x0x0x860x646x1721140874.webp',
+      date: '16/07/2024', time: '10:58 AM',
+      title: 'This Is What Beautiful Pergolas Used For!',
+      intro: 'Pergolas are a beautiful addition to any outdoor space. They create a shaded area for entertaining or relaxing, add privacy, and come in a wide range of styles and materials to suit different needs and preferences.',
+      sections: [
+        { heading: 'Shade and Sun Protection', body: 'A pergola\u2019s roof structure blocks direct sun while still letting air move through, making outdoor areas usable even during the hottest parts of the day.' },
+        { heading: 'Outdoor Dining and Entertaining', body: 'Pergolas effectively extend the home outward, providing a sheltered outdoor room ideal for dining, entertaining, or simply relaxing.' },
+        { heading: 'Garden Enhancement', body: 'A well-placed pergola becomes a striking garden feature, adding both shelter and visual structure to a landscaped space.' },
+        { heading: 'Weather Control', body: 'Modern pergola designs — including retractable and louvered roof systems — can adjust to changing weather, closing off in rain or wind and opening back up once conditions clear.' },
+        { heading: 'Hanging Seating', body: 'Pergola frames are sturdy enough to support hanging chairs and swing seats, adding a relaxed seating option beneath the shaded structure.' },
+      ],
+    } };
+  }
+}
+</script>
+</body>
+</html>

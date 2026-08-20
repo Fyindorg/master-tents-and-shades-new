@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  body { margin: 0; font-family: 'Montserrat', -apple-system, 'Segoe UI', Roboto, sans-serif; color: #334155; }
+  a { color: #BEA16A; text-decoration: none; }
+  a:hover { color: #1F4357; }
+</style>
+</helmet>
+
+<dc-import name="Header" hint-size="100%,140px"></dc-import>
+
+<sc-if value="{{ hasHero }}" hint-placeholder-val="{{ false }}">
+  <section style="{{ heroStyle }}">
+    <div style="position:absolute;inset:0;background:rgba(0,0,0,0.25);"></div>
+    <sc-if value="{{ heroTitle }}" hint-placeholder-val="{{ false }}">
+      <div style="position:relative;max-width:1200px;margin-inline:auto;padding:0 15px 24px 15px;width:100%;">
+        <p style="margin:0;text-align:center;font-family:'DM Serif Text',Georgia,serif;font-size:50px;font-weight:400;color:#ffffff;">{{ heroTitle }}</p>
+      </div>
+    </sc-if>
+  </section>
+</sc-if>
+
+<main>
+  <section style="padding:30px 0 15px 0;">
+    <div style="max-width:1200px;margin-inline:auto;padding-inline:15px;">
+      <sc-for list="{{blocks}}" as="b" hint-placeholder-count="3">
+        <sc-if value="{{ b.isHeading }}" hint-placeholder-val="{{ false }}">
+          <p style="{{ b.style }}">{{ b.text }}</p>
+        </sc-if>
+        <sc-if value="{{ b.isParagraph }}" hint-placeholder-val="{{ false }}">
+          <p style="{{ b.style }}">{{ b.text }}</p>
+        </sc-if>
+      </sc-for>
+    </div>
+  </section>
+
+  <section style="padding:15px 0 30px 0;">
+    <div style="max-width:1200px;margin-inline:auto;padding-inline:15px;display:flex;flex-wrap:wrap;gap:32px;">
+      <div style="flex:1 1 260px;">
+        <p style="margin:0 0 12px 0;text-align:center;font-family:'DM Serif Text',Georgia,serif;font-size:25px;font-weight:400;color:#1F4357;">Related Products</p>
+        <ul style="margin:0;padding-left:20px;color:#1F4357;font-size:16px;line-height:1.6;font-weight:500;">
+          <sc-for list="{{relatedProducts}}" as="item" hint-placeholder-count="8">
+            <li>{{ item }}</li>
+          </sc-for>
+        </ul>
+      </div>
+      <div style="flex:1 1 260px;">
+        <p style="margin:0 0 12px 0;text-align:center;font-family:'DM Serif Text',Georgia,serif;font-size:25px;font-weight:400;color:#1F4357;">Related Other Products</p>
+        <ul style="margin:0;padding-left:20px;color:#1F4357;font-size:16px;line-height:1.6;font-weight:500;">
+          <sc-for list="{{relatedOther}}" as="item" hint-placeholder-count="8">
+            <li>{{ item }}</li>
+          </sc-for>
+        </ul>
+      </div>
+      <div style="flex:1 1 320px;">
+        <p style="margin:0 0 16px 0;text-align:center;font-family:'DM Serif Text',Georgia,serif;font-size:25px;font-weight:400;color:#1F4357;">Get A free Quote!</p>
+        <form onSubmit="{{ onSubmit }}" style="display:flex;flex-direction:column;gap:16px;">
+          <input style="width:100%;box-sizing:border-box;border-radius:10px;border:1px solid rgba(0,0,0,0.15);background:#ffffff;padding:16px 20px;font-size:16px;color:#1F4357;" name="name" placeholder="Name" required="{{ true }}"/>
+          <input style="width:100%;box-sizing:border-box;border-radius:10px;border:1px solid rgba(0,0,0,0.15);background:#ffffff;padding:16px 20px;font-size:16px;color:#1F4357;" name="phone" placeholder="Phone"/>
+          <input style="width:100%;box-sizing:border-box;border-radius:10px;border:1px solid rgba(0,0,0,0.15);background:#ffffff;padding:16px 20px;font-size:16px;color:#1F4357;" name="email" type="email" placeholder="Email" required="{{ true }}"/>
+          <textarea style="width:100%;box-sizing:border-box;border-radius:10px;border:1px solid rgba(0,0,0,0.15);background:#ffffff;padding:16px 20px;font-size:16px;color:#1F4357;" name="message" rows="4" placeholder="Message"></textarea>
+          <button type="submit" style="width:100%;border:none;border-radius:10px;background:#c6ab84;padding:16px 24px;font-size:17px;font-weight:500;color:#ffffff;cursor:pointer;">{{ submitLabel }}</button>
+          <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+            <p style="margin:0;font-size:14px;color:#1F4357;">Thanks — we'll be in touch shortly.</p>
+          </sc-if>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<dc-import name="Footer" hint-size="100%,400px"></dc-import>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;heroImg&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;string | null&quot;},&quot;heroPos&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;string&quot;},&quot;heroTitle&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;string | null&quot;},&quot;blocks&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;object[]&quot;},&quot;relatedProducts&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;string[]&quot;},&quot;relatedOther&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;string[]&quot;}}">
+class Component extends DCLogic {
+  state = { sending: false, sent: false };
+  onSubmit(e) {
+    e.preventDefault();
+    this.setState({ sending: true });
+    setTimeout(() => this.setState({ sending: false, sent: true }), 500);
+  }
+  renderVals() {
+    const heroImg = this.props.heroImg ?? null;
+    const blocksIn = this.props.blocks ?? [];
+    const blocks = blocksIn.map(b => ({
+      text: b.text,
+      isHeading: b.t === 'h1',
+      isParagraph: b.t === 'p',
+      style: b.t === 'h1'
+        ? `margin:0 0 16px 0;text-align:${b.align || 'center'};font-family:'DM Serif Text',Georgia,serif;font-size:25px;font-weight:400;color:#1F4357;`
+        : `margin:0 0 16px 0;text-align:${b.align || 'left'};font-size:16px;line-height:1.7;color:${b.color || '#2D3842'};font-style:${b.italic ? 'italic' : 'normal'};`,
+    }));
+    return {
+      hasHero: !!heroImg,
+      heroTitle: this.props.heroTitle ?? null,
+      heroStyle: `position:relative;height:420px;overflow:hidden;background-image:url(${heroImg});background-size:cover;background-position:${this.props.heroPos || 'center'};display:flex;align-items:flex-end;`,
+      blocks,
+      relatedProducts: this.props.relatedProducts ?? [],
+      relatedOther: this.props.relatedOther ?? [],
+      sent: this.state.sent,
+      submitLabel: this.state.sending ? 'Sending...' : 'Send →',
+      onSubmit: (e) => this.onSubmit(e),
+    };
+  }
+}
+</script>
+</body>
+</html>

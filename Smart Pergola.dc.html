@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<dc-import name="InfoPage" hint-size="100%,2000px" dc-props="{{ p }}"></dc-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return { p: {
+      heroImg: 'img/Smart-Pergola-in-Dubai-scaled.webp', heroPos: '55% 29%', heroTitle: 'Smart Pergola',
+      sections: [
+        { cols: [[
+          { t: 'h1', text: 'Smart Pergola in Dubai for Luxury Villas, Hotels and Commercial Outdoor Spaces', align: 'center' },
+          { t: 'p', text: 'A smart pergola in Dubai is a cutting-edge outdoor structure that incorporates modern technology for remote control through smartphones or other smart devices. These innovative pergolas are equipped with features like adjustable louvers, integrated lighting, heating, and cooling systems, and sensors that automatically adjust settings based on weather conditions. They are highly sought after in Dubai for their convenience, energy efficiency, and the ability to create a cozy outdoor environment that can be enjoyed throughout the year. Pergolas, in general, are outdoor structures characterized by an open, grid-like roof supported by columns or posts, lacking walls. They consist of various elements such as columns, beams, bracing, rafters, and may include batten strips or louvers. While offering shade to outdoor spaces like patios, hot tubs, and grills, pergolas still allow natural light to filter through. Additionally, they serve to expand living areas, increase property value, and shield outdoor spaces from various weather conditions.' },
+        ]] },
+        { cols: [
+          [ { t: 'p', text: 'Smart Pergola Features', align: 'center', bold: true, serif: true },
+            { t: 'p', text: 'Smart pergolas come with motorized loujsonvers that can be adjusted to control the amount of sunlight and shade in the pergola. This allows you to create the perfect ambiance for your outdoor space. Integrated lighting: Many smart pergolas come with integrated LED lighting that can be controlled remotely. This allows you to set the mood with different lighting options and create a cozy atmosphere for your outdoor gatherings. Some smart pergolas come with built-in heating and cooling systems that allow you to enjoy your outdoor space year-round. These systems can be controlled remotely, so you can adjust the temperature to your liking. Smartphone integration: Many smart pergolas can be controlled through a smartphone app, allowing you to adjust the settings from anywhere. This makes it easy to create the perfect outdoor environment without having to leave your seat.' } ],
+          [ { t: 'p', text: 'Smart Pergola Developers', align: 'center', bold: true, serif: true },
+            { t: 'p', text: 'Smart pergola developers are skilled experts with a deep understanding of creating innovative pergola structures that integrate sophisticated technology. These professionals focus on designing and installing pergolas that can be controlled remotely using smart devices, providing users with convenient management options. Their projects feature a range of components such as adjustable louvers, energy-saving LED lighting, climate control mechanisms for heating and cooling, and sensors for monitoring weather conditions. Their proficiency extends to crafting intelligent pergolas that enhance outdoor spaces, delivering a customized and welcoming environment that can be customized to suit individual requirements and desires.' } ],
+        ] },
+      ],
+    } };
+  }
+}
+</script>
+</body>
+</html>

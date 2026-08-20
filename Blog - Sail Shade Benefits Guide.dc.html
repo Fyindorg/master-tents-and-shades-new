@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<dc-import name="BlogPost" hint-size="100%,1600px" dc-props="{{ p }}"></dc-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return { p: {
+      dayNum: '24', views: '24716',
+      img: 'img/Sail-Type-Parking-Shade-860x860x0x107x860x646x1721140808.webp',
+      date: '09/07/2024', time: '11:25 AM',
+      title: 'Quick Guide To Know Benefits Of Sail Shades',
+      intro: 'Sail shades provide a protective covering over outdoor areas to shield them from the sun. They create shaded zones suitable for relaxing or entertaining, protect outdoor furniture from sun damage, and help cool the space beneath them.',
+      sections: [
+        { heading: 'Sun Protection', body: 'Sail shades create comfortable shaded areas for relaxing or entertaining, and protect outdoor furniture from constant sun exposure while lowering the temperature underneath.' },
+        { heading: 'Aesthetic Value', body: 'Available in a range of shapes, sizes, and colors, sail shades can be matched to any outdoor decor while still delivering effective sun protection.' },
+        { heading: 'Ventilation and Cooling', body: 'Their open, tensioned design allows air to move freely beneath the fabric, keeping outdoor spaces cooler and more comfortable than fully enclosed covers.' },
+        { heading: 'Easy Installation', body: 'Sail shades are anchored at a small number of fixed points, which makes installation straightforward compared to more complex structures.' },
+        { heading: 'Durable', body: 'Quality sail shade fabric resists high winds, rain, fading, and mildew, making it well suited to long-term outdoor use.' },
+        { heading: 'Cost Friendly', body: 'Sail shades are a cost-effective way to add shade to patios, decks, and yards, and can be adjusted or repositioned as needs change.' },
+      ],
+    } };
+  }
+}
+</script>
+</body>
+</html>

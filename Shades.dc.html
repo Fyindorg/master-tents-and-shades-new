@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  body { margin: 0; font-family: 'Montserrat', -apple-system, 'Segoe UI', Roboto, sans-serif; color: #334155; }
+  a { color: #BEA16A; text-decoration: none; }
+  a:hover { color: #1F4357; }
+</style>
+</helmet>
+
+<dc-import name="Header" hint-size="100%,140px"></dc-import>
+
+<section style="position:relative;height:400px;overflow:hidden;">
+  <sc-if value="{{ ready }}" hint-placeholder-val="{{ false }}">
+    <img src="{{ heroSrc }}" alt="Shades" style="display:block;width:100%;height:400px;object-fit:cover;"/>
+  </sc-if>
+  <div style="position:absolute;inset:0;background:rgba(0,0,0,0.15);"></div>
+</section>
+
+<main>
+  <section style="padding:24px 0 16px 0;">
+    <div style="max-width:1200px;margin-inline:auto;padding-inline:15px;">
+      <h1 style="margin:0 0 16px 0;text-align:center;font-family:'DM Serif Text',Georgia,serif;font-weight:400;font-size:25px;color:#1F4357;">Sun Shade Suppliers and Manufacturers in Dubai</h1>
+      <p style="margin:0;text-align:justify;font-size:16px;line-height:1.7;color:#000;">Master tents and shades LLC Shade suppliers and developers are companies that specialize in providing shade solutions for various outdoor spaces. They offer a wide range of products such as shade sails, umbrellas, pergolas, and awnings to help create comfortable and functional outdoor environments. These companies typically work with architects, designers, and property owners to design and install custom shade structures that meet their specific needs and requirements. Shade suppliers and developers often have expertise in engineering, design, and installation to ensure that their shade solutions are durable, aesthetically pleasing, and provide effective sun protection. Shade sails are fabric canopies tensioned between anchor points. They come in various shapes (triangular, rectangular, or custom) and provide a modern, minimalist look.</p>
+    </div>
+  </section>
+
+  <section style="padding:16px 0;">
+    <div style="max-width:1200px;margin-inline:auto;padding-inline:15px;">
+      <p style="margin:0 0 12px 0;text-align:center;font-family:'DM Serif Text',Georgia,serif;font-weight:400;font-size:25px;color:#1F4357;">All kind of Shades in Dubai, UAE</p>
+      <p style="margin:0 0 24px 0;text-align:justify;font-size:16px;line-height:1.7;color:#000;">There are several types of tensile shades, including Conical tensile shades, Hyper tensile shades, Umbrella tensile shades, Wave tensile shades, Barrel vault tensile shades, Hyperbolic paraboloid tensile shades. Each type of tensile shade has its own unique design and structure, making them suitable for different applications and aesthetic preferences.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;">
+        <sc-for list="{{cards}}" as="c" hint-placeholder-count="7">
+          <div>
+            <sc-if value="{{ ready }}" hint-placeholder-val="{{ false }}">
+              <sc-if value="{{ c.href }}" hint-placeholder-val="{{ false }}">
+                <a href="{{ c.href }}"><img src="{{ c.img }}" alt="{{ c.title }}" style="width:100%;height:180px;object-fit:cover;display:block;"/></a>
+              </sc-if>
+              <sc-if value="{{ c.noHref }}" hint-placeholder-val="{{ false }}">
+                <img src="{{ c.img }}" alt="{{ c.title }}" style="width:100%;height:180px;object-fit:cover;display:block;"/>
+              </sc-if>
+            </sc-if>
+            <p style="margin:8px 0 4px 0;text-align:center;font-size:18px;font-weight:500;color:#1F4357;">{{ c.title }}</p>
+            <p style="margin:0;text-align:justify;font-size:15px;line-height:1.6;color:#000;">{{ c.text }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:24px 0 16px 0;">
+    <div style="max-width:1200px;margin-inline:auto;padding-inline:15px;display:flex;flex-wrap:wrap;gap:32px;">
+      <div style="flex:1 1 220px;">
+        <p style="margin:0 0 12px 0;text-align:center;font-family:'DM Serif Text',Georgia,serif;font-size:25px;font-weight:400;color:#1F4357;">Related Products</p>
+        <ul style="margin:0;padding-left:20px;color:#000;font-size:16px;line-height:1.6;">
+          <li>Play Area Shades</li><li>Canopy Shades</li><li>Sun Shades</li><li>Umbrealla shades</li><li>Sail Shades</li><li>Tensile Shades</li><li>Swimming Pool Shades</li><li>Pergola Shades</li>
+        </ul>
+      </div>
+      <div style="flex:1 1 220px;">
+        <p style="margin:0 0 12px 0;text-align:center;font-family:'DM Serif Text',Georgia,serif;font-size:25px;font-weight:400;color:#1F4357;">Related Other Products</p>
+        <ul style="margin:0;padding-left:20px;color:#000;font-size:16px;line-height:1.6;">
+          <li>Car Parking Shades</li><li>Pergola Shades</li><li>Cat Ladders</li><li>Umbrellas</li><li>Awnings</li><li>Steel Works</li><li>Tensile Shades</li><li>Swimming Pool Shades</li>
+        </ul>
+      </div>
+      <div style="flex:1 1 320px;">
+        <p style="margin:0 0 16px 0;text-align:center;font-family:'DM Serif Text',Georgia,serif;font-size:25px;font-weight:400;color:#1F4357;">Get A free Quote!</p>
+        <form onSubmit="{{ onSubmit }}" style="display:flex;flex-direction:column;gap:16px;">
+          <input style="width:100%;box-sizing:border-box;border-radius:10px;border:1px solid rgba(0,0,0,0.15);background:#ffffff;padding:16px 20px;font-size:16px;color:#1F4357;" name="name" placeholder="Name" required="{{ true }}"/>
+          <input style="width:100%;box-sizing:border-box;border-radius:10px;border:1px solid rgba(0,0,0,0.15);background:#ffffff;padding:16px 20px;font-size:16px;color:#1F4357;" name="phone" placeholder="Phone"/>
+          <input style="width:100%;box-sizing:border-box;border-radius:10px;border:1px solid rgba(0,0,0,0.15);background:#ffffff;padding:16px 20px;font-size:16px;color:#1F4357;" name="email" type="email" placeholder="Email" required="{{ true }}"/>
+          <textarea style="width:100%;box-sizing:border-box;border-radius:10px;border:1px solid rgba(0,0,0,0.15);background:#ffffff;padding:16px 20px;font-size:16px;color:#1F4357;" name="message" rows="4" placeholder="Message"></textarea>
+          <button type="submit" style="width:100%;border:none;border-radius:10px;background:#c6ab84;padding:16px 24px;font-size:17px;font-weight:500;color:#ffffff;cursor:pointer;">{{ submitLabel }}</button>
+          <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+            <p style="margin:0;font-size:14px;color:#1F4357;">Thanks — we'll be in touch shortly.</p>
+          </sc-if>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<dc-import name="Footer" hint-size="100%,400px"></dc-import>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { activeSlide: 0, sending: false, sent: false, ready: false };
+  componentDidMount() {
+    this.setState({ ready: true });
+    this._timer = setInterval(() => this.setState(s => ({ activeSlide: (s.activeSlide + 1) % 6 })), 4000);
+  }
+  componentWillUnmount() { clearInterval(this._timer); }
+  onSubmit(e) {
+    e.preventDefault();
+    this.setState({ sending: true });
+    setTimeout(() => this.setState({ sending: false, sent: true }), 500);
+  }
+  renderVals() {
+    const heroSrcs = ['img/sun-slide-13.jpg','img/sun-slide-14.jpg','img/sun-slide-15.jpg','img/sun-slide-16.jpg','img/sun-slide-17.jpg','img/sun-slide-18.jpg'];
+    const cardsRaw = [
+      { img: 'img/awinings-860x646x0x0x860x646x1722151643.webp', title: 'Awning Shades', href: 'Awning Shades.dc.html', text: 'Awnings, which are versatile exterior coverings typically made of fabric or other materials, provide a range of benefits for homes and businesses. They offer effective sun protection by creating shade' },
+      { img: 'img/New-Pergola-Designs-860x640x0x0x860x640x1721141039.webp', title: 'Pergola Shades', href: 'Pergola Shades.dc.html', text: 'Outdoor garden pergolas car parking shades in UAE, and other Gulf Regions like Oman and The best way to enjoy outdoor weather is to put a retractable pergola, fixed pergola, motorized pergola, flat roof pergola' },
+      { img: 'img/Sail-Type-Parking-Shade-860x860x0x108x860x646x1721140808.webp', title: 'Sail Shades', href: 'New Sail Type Parking.dc.html', text: 'Awnings, which are versatile exterior coverings typically made of fabric or other materials, provide a range of benefits for homes and businesses. They offer effective sun protection by creating shade' },
+      { img: 'img/swimming-pool-shades-2-1430x646x286x0x860x646x1724156687.webp', title: 'Swimming Pool Shades', href: null, text: "Everyone likes to Have fun in the outdoor swimming pool area but it\u2019s really hard to swim in the hot summer, the harshness of the sun will not allow us to enjoy the swimming pool. To overcome this" },
+      { img: 'img/Tensile-Shades-860x646x0x0x860x646x1721112646.webp', title: 'Tensile Shades', href: null, text: 'Awnings, which are versatile exterior coverings typically made of fabric or other materials, provide a range of benefits for homes and businesses. They offer effective sun protection by creating shade' },
+      { img: 'img/umbrella-860x822x0x88x860x644x1724156799.webp', title: 'Umbrella Shades', href: 'Umbrella Shades.dc.html', text: 'Awnings, which are versatile exterior coverings typically made of fabric or other materials, provide a range of benefits for homes and businesses. They offer effective sun protection by creating shade' },
+      { img: 'img/walkway-1222x646x180x0x860x646x1724157686.webp', title: 'Walkway Shades', href: null, text: 'Awnings, which are versatile exterior coverings typically made of fabric or other materials, provide a range of benefits for homes and businesses. They offer effective sun protection by creating shade' },
+    ];
+    const cards = cardsRaw.map(c => ({ ...c, noHref: !c.href }));
+    return {
+      ready: this.state.ready,
+      heroSrc: heroSrcs[this.state.activeSlide],
+      cards,
+      sent: this.state.sent,
+      submitLabel: this.state.sending ? 'Sending...' : 'Send →',
+      onSubmit: (e) => this.onSubmit(e),
+    };
+  }
+}
+</script>
+</body>
+</html>

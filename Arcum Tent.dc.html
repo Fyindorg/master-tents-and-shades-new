@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<dc-import name="ProductPage" hint-size="100%,2000px" dc-props="{{ productProps }}"></dc-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      productProps: {
+        heroImg: null,
+        blocks: [
+          { t: 'h1', text: 'Arcum Tent Manufacturers in UAE for Weddings, Exhibitions and Corporate Outdoor Events', align: 'center' },
+          { t: 'p', text: 'We are a company in UAE that specializes in making and providing Arcum tents. These tents are made from a sturdy aluminum frame and white PVC-coated material. They are waterproof, UV resistant, and fire retardant. The Arcum tent has a unique design that combines traditional Chinese architecture with a modern "A" frame clear span structure. The tent is spacious with an attractive curved roofline. It is suitable for exhibitions, big events, or temporary showrooms. We offer Arcum tents in Dubai, Sharjah, Abu Dhabi, Ajman, and other locations in the GCC countries and Africa.' },
+          { t: 'h1', text: 'Arcum Tent Accessories', align: 'center' },
+          { t: 'p', text: 'Arcum tent optical accessories are specialized items designed for arcum tents, including windows, skylights, and lighting fixtures to improve functionality and aesthetics. Arcum tent offers various optical accessories to enhance its functionality and appearance. These include different types of windows such as glass awning windows, glass sliding windows, glass double casement windows, roll-up windows, and extractor fans. Additionally, there are multiple door options available, including fabric doors with PVC and zipper, solid doors made of aluminum or glass, and special options like glass sliding doors, rolling doors, and clamshell doors. The tent also provides fabric sidewalls and solid sidewalls with options like ABS panels, tempered glass, sandwich panels, and steel cladding.' },
+        ],
+        relatedProducts: ['Event Tents','Steel Tents','Aluminium Tents','Labor Tents','Wedding Tents','High Peak Tents','Gazebo Tents','Dome Tents'],
+        relatedOther: ['Car Parking Shades','Pergola Shades','Cat Ladders','Umbrellas','Awnings','Steel Works','Tensile Shades','Swimming Pool Shades'],
+      },
+    };
+  }
+}
+</script>
+</body>
+</html>

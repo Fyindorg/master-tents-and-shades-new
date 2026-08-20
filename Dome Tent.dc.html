@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<dc-import name="ProductPage" hint-size="100%,2000px" dc-props="{{ productProps }}"></dc-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      productProps: {
+        heroImg: 'img/DOME-TENT.jpg',
+        heroPos: '55% 29%',
+        heroTitle: 'Dome Tent',
+        blocks: [
+          { t: 'h1', text: 'Dome Tent Manufacturers in Dubai for Events, Exhibitions, Glamping and Immersive Experiences', align: 'center' },
+          { t: 'p', text: 'The purpose of incorporating placeholder text, often referred to as dummy text, in your paragraph is to simulate the appearance of real English text. This dummy text typically consists of a balanced distribution of letters, words, and sentence structures, resembling natural language patterns. By using such text, you can assess the layout and formatting of your content without being distracted by the actual meaning of the words.' },
+        ],
+        relatedProducts: ['Event Tents','Steel Tents','Aluminium Tents','Labor Tents','Wedding Tents','High Peak Tents','Gazebo Tents','Dome Tents'],
+        relatedOther: ['Car Parking Shades','Pergola Shades','Cat Ladders','Umbrellas','Awnings','Steel Works','Tensile Shades','Swimming Pool Shades'],
+      },
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  body { margin: 0; font-family: 'Montserrat', -apple-system, 'Segoe UI', Roboto, sans-serif; color: #334155; }
+  a { color: #BEA16A; text-decoration: none; }
+  a:hover { color: #1F4357; }
+</style>
+</helmet>
+
+<dc-import name="Header" hint-size="100%,140px"></dc-import>
+
+<section style="position:relative;height:420px;overflow:hidden;">
+  <img src="{{ heroSrc }}" alt="Pergola shade designs" style="display:block;width:100%;height:420px;object-fit:cover;"/>
+  <div style="position:absolute;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.25);"></div>
+</section>
+
+<main>
+  <section style="padding:24px 0 16px 0;">
+    <div style="max-width:1200px;margin-inline:auto;padding-inline:15px;">
+      <p style="margin:0 0 16px 0;text-align:center;font-family:'DM Serif Text',Georgia,serif;font-weight:400;font-size:25px;color:#1F4357;">New Pergola Designs in Dubai, UAE</p>
+      <h1 style="margin:0;font-size:16px;font-weight:400;line-height:1.7;color:#334155;">Master Tents and Sheds (Motorized Pergola | Automatic Pergola | Smart Pergola | Retractable Pergola | Flat Roof Pergola | Bioclimatic Pergola) and manufacturers outdoor, garden pergolas in Dubai UAE, and other Gulf Regions like Oman and The best way to enjoy outdoor weather is to put a retractable pergola shade designs or fixed pergola canopy in your garden or somewhere nearby out of your door in any weather condition either you want to enjoy your summer season outdoors or winter's shiny sun with cold air, a pergola shade canopy help you in both weather condition to make your outdoor seating area enjoyable. Pergola designs Shades Suppliers outdoor, garden pergolas car parking shades in UAE and it can prevent overexposure to sunlight and ultra-violet rays, and we do all kind of Pergola Shade Designs. Pergola Shades are used for multiple purposes at the outside of the home, in the garden, or parks. These shades come in different sizes, shapes, and types, you can customize them as per your needs and the place where you want to put these shades to put the Pergola Canopy in your outdoor area you have to decide, what will be its purpose. Either you want a pergola parking shade area or seating area in the garden or out of your doorstep.</h1>
+    </div>
+  </section>
+
+  <section style="padding:16px 0;">
+    <div style="max-width:1200px;margin-inline:auto;padding-inline:15px;">
+      <p style="margin:0 0 16px 0;text-align:center;font-family:'DM Serif Text',Georgia,serif;font-weight:400;font-size:25px;color:#1F4357;">All kind of Pergola Shade Designs Features</p>
+      <ul style="margin:0;padding-left:20px;color:#1F4357;font-size:16px;line-height:1.6;font-weight:500;">
+        <sc-for list="{{features}}" as="f" hint-placeholder-count="8">
+          <li style="margin-bottom:6px;">{{ f }}</li>
+        </sc-for>
+      </ul>
+    </div>
+  </section>
+
+  <sc-for list="{{rows}}" as="r" hint-placeholder-count="6">
+    <section style="padding:24px 0;">
+      <div style="max-width:1200px;margin-inline:auto;padding-inline:15px;display:flex;flex-wrap:wrap;gap:32px;align-items:center;">
+        <sc-if value="{{ r.imgFirst }}" hint-placeholder-val="{{ false }}">
+          <img src="{{ r.img }}" alt="{{ r.title }}" style="flex:1 1 380px;min-width:0;width:100%;max-width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:6px;display:block;"/>
+        </sc-if>
+        <div style="flex:1 1 380px;min-width:0;">
+          <p style="margin:0 0 12px 0;text-align:left;font-size:25px;font-weight:500;color:#1F4357;">{{ r.title }}</p>
+          <p style="margin:0;font-size:16px;line-height:1.7;color:#334155;">{{ r.text }}</p>
+        </div>
+        <sc-if value="{{ r.imgLast }}" hint-placeholder-val="{{ false }}">
+          <img src="{{ r.img }}" alt="{{ r.title }}" style="flex:1 1 380px;min-width:0;width:100%;max-width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:6px;display:block;"/>
+        </sc-if>
+      </div>
+    </section>
+  </sc-for>
+
+  <section style="padding:30px 0 15px 0;">
+    <div style="max-width:1200px;margin-inline:auto;padding-inline:15px;display:flex;flex-wrap:wrap;gap:32px;">
+      <div style="flex:1 1 480px;display:flex;flex-direction:column;">
+        <p style="margin:0 0 12px 0;text-align:center;font-family:'DM Serif Text',Georgia,serif;font-size:25px;font-weight:400;color:#1F4357;">Why Choose Us</p>
+        <p style="margin:0 0 20px 0;font-size:16px;line-height:1.7;color:#334155;">Our team in Dubai specializes in supplying a diverse range of car parking shades and tents tailored for various sectors, including aviation, sports, and military. We provide customized solutions to meet the specific requirements of each industry, ensuring high-quality and durable structures that cater to their unique needs. Our expertise extends to designing and installing parking shades and tents that are not only functional but also aesthetically pleasing, enhancing the overall environment and functionality of the spaces they serve.</p>
+        <div ref="{{ statsRef }}" style="display:flex;align-items:stretch;margin-top:auto;">
+          <sc-for list="{{stats}}" as="s" hint-placeholder-count="3">
+            <div style="flex:1;padding:0 8px;text-align:center;border-left:1px solid rgba(31,67,87,0.25);">
+              <p style="margin:0;white-space:nowrap;font-size:clamp(14px,1.4vw,20px);font-weight:500;color:#1F4357;">{{ s.label }}</p>
+              <p style="margin:4px 0 0 0;font-size:clamp(34px,3.5vw,50px);line-height:1.2;color:#BEA16A;">{{ s.display }}</p>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+      <div style="flex:1 1 380px;">
+        <p style="margin:0 0 16px 0;text-align:center;font-family:'DM Serif Text',Georgia,serif;font-size:25px;font-weight:400;color:#1F4357;">Get A free Quote!</p>
+        <form onSubmit="{{ onSubmit }}" style="display:flex;flex-direction:column;gap:16px;">
+          <input style="width:100%;box-sizing:border-box;border-radius:10px;border:1px solid rgba(0,0,0,0.15);background:#ffffff;padding:16px 20px;font-size:16px;color:#1F4357;" name="name" placeholder="Name" required="{{ true }}"/>
+          <input style="width:100%;box-sizing:border-box;border-radius:10px;border:1px solid rgba(0,0,0,0.15);background:#ffffff;padding:16px 20px;font-size:16px;color:#1F4357;" name="phone" placeholder="Phone"/>
+          <input style="width:100%;box-sizing:border-box;border-radius:10px;border:1px solid rgba(0,0,0,0.15);background:#ffffff;padding:16px 20px;font-size:16px;color:#1F4357;" name="email" type="email" placeholder="Email" required="{{ true }}"/>
+          <textarea style="width:100%;box-sizing:border-box;border-radius:10px;border:1px solid rgba(0,0,0,0.15);background:#ffffff;padding:16px 20px;font-size:16px;color:#1F4357;" name="message" rows="4" placeholder="Message"></textarea>
+          <button type="submit" style="width:100%;border:none;border-radius:10px;background:#c6ab84;padding:16px 24px;font-size:17px;font-weight:500;color:#ffffff;cursor:pointer;">{{ submitLabel }}</button>
+          <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+            <p style="margin:0;font-size:14px;color:#1F4357;">Thanks — we'll be in touch shortly.</p>
+          </sc-if>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<dc-import name="Footer" hint-size="100%,400px"></dc-import>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { activeSlide: 0, sending: false, sent: false, statsCounts: [0, 0, 0] };
+  statsRef = (el) => {
+    if (!el || this._statsObserved) return;
+    this._statsObserved = true;
+    const targets = [200, 60, 700];
+    const io = new IntersectionObserver((entries) => {
+      if (entries.some((e) => e.isIntersecting)) { this.animateStats(targets); io.disconnect(); }
+    }, { threshold: 0.3 });
+    io.observe(el);
+  };
+  animateStats(targets) {
+    const start = performance.now();
+    const duration = 1600;
+    const tick = (now) => {
+      const p = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - p, 3);
+      this.setState({ statsCounts: targets.map((t) => Math.round(t * eased)) });
+      if (p < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  }
+  componentDidMount() {
+    this._timer = setInterval(() => this.setState(s => ({ activeSlide: (s.activeSlide + 1) % 4 })), 4000);
+  }
+  componentWillUnmount() { clearInterval(this._timer); }
+  onSubmit(e) {
+    e.preventDefault();
+    this.setState({ sending: true });
+    setTimeout(() => this.setState({ sending: false, sent: true }), 500);
+  }
+  renderVals() {
+    const heroSrcs = ['img/6.webp', 'img/8.jpg', 'img/7.jpg', 'img/1.webp'];
+    return {
+      heroSrc: heroSrcs[this.state.activeSlide],
+      features: [
+        'Roofing options: Pergolas Designs can have a variety of roofing options, including open slats, lattice, fabric canopies, or solid roofs. Each option provides a different level of shade and protection from the elements.',
+        'Lighting: Adding lighting to a pergola can create a warm and inviting atmosphere for evening gatherings. Options include string lights, lanterns, sconces, or even built-in LED lights.',
+        'Privacy screens: If you want to create a more private space, consider adding privacy screens to your pergola. These can be made of wood, metal, or fabric and can be stationary or retractable.',
+        'Heating and cooling options: To make your pergola more comfortable in extreme temperatures, consider adding heating elements like fire pits, outdoor heaters, or infrared heaters. For cooling, you could install ceiling fans, misting systems, or portable air conditioning units.',
+        'Built-in seating: Built-in benches or seating areas can make your pergola a more functional and comfortable space for relaxing or entertaining guests.',
+        'Planters and trellises: Adding planters or trellises to your pergola can help create a lush and inviting atmosphere. You can grow climbing plants like vines or flowers to add color and texture to the space.',
+        'Outdoor kitchen or bar: If you love to entertain outdoors, consider adding an outdoor kitchen or bar to your pergola. This can include a grill, sink, refrigerator, and storage space for cooking and serving food and drinks.',
+        'Audio and entertainment systems: To create a more immersive outdoor experience, consider adding audio speakers, TVs, or projectors to your pergola. This can make it a great space for watching movies, listening to music, or hosting outdoor parties.',
+      ],
+      rows: [
+        { title: 'For Residential', text: 'The residential sector pergola shade market is expected to experience significant growth in the coming years, driven by increasing demand for outdoor living spaces and the growing trend of creating functional and aesthetically pleasing outdoor environments. Homeowners are increasingly looking to enhance their outdoor spaces with pergolas that provide shade, shelter, and style. Additionally, the rising popularity of outdoor entertaining and dining has further fueled the demand for pergolas as a way to create inviting and comfortable outdoor living areas. As a result, manufacturers and suppliers in the residential sector pergola shade market are expected to see increased opportunities for growth and expansion in the coming years.', img: 'img/FIBER-GLASS-PERGOLA.webp', imgFirst: true, imgLast: false },
+        { title: 'For Commercial', text: 'Commercial sector pergola shade structures are specifically crafted architectural elements that are strategically designed to offer shelter and shield outdoor areas, like those found in restaurants, cafes, hotels, and various other commercial settings, against natural elements such as sunlight and rain. These structures are commonly constructed using robust materials like aluminum or steel, ensuring longevity and resilience. They can be tailor-made to suit the unique requirements of the location, providing a versatile solution for outdoor spaces. These shade structures can either stand independently or be affixed to existing buildings, in installation.', img: 'img/Transparent-Pergola-Shade.webp', imgFirst: false, imgLast: true },
+        { title: 'For Car Parking', text: 'A car parking shade pergola is a robust structure that offers shade and safeguarding for vehicles parked beneath it. It commonly comprises a strong framework supporting a roof crafted from resilient materials like fabric or polycarbonate panels. This pergola is specifically engineered to be positioned over a parking spot to provide protection for the vehicle against harsh weather conditions such as sunlight, rain, and other environmental elements. Additionally, it aids in maintaining the car\u2019s interior cool during hot temperatures and shields it from bird excrement and tree resin. These car parking shade pergolas come in a diverse range of sizes, designs, and color options to cater to various requirements and aesthetic preferences.', img: 'img/Car-Parking-Pergola-in-Dubai.webp', imgFirst: true, imgLast: false },
+        { title: 'For Swimming Pool Area', text: 'A swimming pool pergola shade is a carefully designed architectural feature erected above a swimming pool to offer shelter and shield from the sun\'s rays. It is usually composed of sturdy posts or columns that uphold a roof or canopy, effectively preventing direct sunlight from reaching the pool area. This shading structure serves to maintain the water temperature in the pool at a comfortable level, making swimming more enjoyable. Additionally, it creates a shaded spot where individuals can unwind and bask in a relaxing atmosphere beside the pool. Besides its functional benefits, a pergola shade contributes to the visual appeal of the pool area, elevating its overall aesthetic by adding a touch of elegance and style.', img: 'img/Swimming-Pool-Pergola-Shade.webp', imgFirst: false, imgLast: true },
+        { title: 'Garden Area', text: 'A garden area pergola shade is a versatile outdoor structure that not only provides a stylish and functional addition to your yard but also serves multiple purposes. It acts as a protective shield against the sun\'s harsh rays, offering a shaded area for relaxation, dining, or social gatherings. The carefully selected design and materials of a pergola shade can significantly elevate the aesthetic appeal of your garden, creating a charming and sophisticated ambiance. This enhancement can transform your outdoor space into a tranquil retreat where you can unwind, host gatherings, or simply immerse yourself in the serene surroundings of your garden, making it a versatile and appealing feature for your home.', img: 'img/New-Outdoor-Pergola.webp', imgFirst: true, imgLast: false },
+        { title: 'Patio Backyard', text: 'A pergola is a versatile outdoor structure constructed from materials like wood or metal, characterized by vertical posts or pillars that support horizontal crossbeams and an open lattice roof. This architectural element serves multiple purposes, offering partial shade while adding aesthetic appeal to a garden or outdoor space. Pergolas can be utilized to delineate specific areas within a landscape, act as a central feature in a garden design, or serve as a support structure for climbing plants such as vines or flowers. Commonly found in backyard or patio settings, pergolas create a shaded retreat for various activities like al fresco dining, relaxation, or hosting gatherings, enhancing the overall functionality and visual interest of the outdoor environment.', img: 'img/Aluminum-pergola-suppliers.webp', imgFirst: false, imgLast: true },
+      ],
+      stats: [
+        { label: 'Happy Clients', display: this.state.statsCounts[0] },
+        { label: 'Business', display: this.state.statsCounts[1] },
+        { label: 'Completed Projects', display: this.state.statsCounts[2] },
+      ],
+      statsRef: this.statsRef,
+      sent: this.state.sent,
+      submitLabel: this.state.sending ? 'Sending...' : 'Send →',
+      onSubmit: (e) => this.onSubmit(e),
+    };
+  }
+}
+</script>
+</body>
+</html>

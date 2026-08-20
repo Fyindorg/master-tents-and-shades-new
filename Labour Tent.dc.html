@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<dc-import name="ProductPage" hint-size="100%,2000px" dc-props="{{ productProps }}"></dc-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      productProps: {
+        heroImg: 'img/labour-tent.jpeg',
+        heroPos: '55% 29%',
+        heroTitle: 'Labour Tent',
+        blocks: [
+          { t: 'h1', text: 'Labour Tent Manufacturers in UAE for Construction Sites, Industrial Facilities and Worker Rest Areas', align: 'center' },
+          { t: 'p', text: 'Labour Tent Manufacturers in UAE | Labour Tent Suppliers in Dubai UAE', align: 'center' },
+          { t: 'p', text: 'Master labour tent is a temporary structure commonly found at construction sites, industrial facilities, or other work locations where workers can seek refuge during their breaks, have meals, and relax. These tents are usually furnished with tables and chairs for dining, and in some cases, they may also include essential facilities like water coolers or portable toilets. By offering a designated space for workers to unwind and rejuvenate, labour tents contribute to fostering a conducive and secure environment that supports the well-being and productivity of the workforce.' },
+        ],
+        relatedProducts: ['Event Tents','Steel Tents','Aluminium Tents','Labor Tents','Wedding Tents','High Peak Tents','Gazebo Tents','Dome Tents'],
+        relatedOther: ['Car Parking Shades','Pergola Shades','Cat Ladders','Umbrellas','Awnings','Steel Works','Tensile Shades','Swimming Pool Shades'],
+      },
+    };
+  }
+}
+</script>
+</body>
+</html>

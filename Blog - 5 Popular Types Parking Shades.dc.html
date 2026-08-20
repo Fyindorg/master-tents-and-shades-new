@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<dc-import name="BlogPost" hint-size="100%,1600px" dc-props="{{ p }}"></dc-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return { p: {
+      dayNum: '24', views: '',
+      img: 'img/icon-1.png',
+      date: '21/08/2024', time: '',
+      title: '5 Popular Types of Car Parking Shades in Dubai',
+      intro: 'Dubai\u2019s intense sun and heat make a well-chosen parking shade one of the most practical investments for any property. Here are five of the most popular designs in use across the city.',
+      sections: [
+        { heading: 'Cantilever Parking Shades', body: 'Supported from a single side, cantilever shades leave the parking bay itself completely open, making them a popular choice for larger commercial lots.' },
+        { heading: 'Pyramid Parking Shades', body: 'A peaked, pyramid-shaped canopy sheds rain effectively and gives a distinctive architectural profile to any parking area.' },
+        { heading: 'Cone Parking Shades', body: 'A tapered cone shape offers an elegant look, well suited to both single-bay and multi-bay parking layouts.' },
+        { heading: 'Arch Parking Shades', body: 'A smooth curved canopy blends easily with most building styles while still providing strong, even coverage.' },
+        { heading: 'Sail-Type Parking Shades', body: 'A tensioned fabric sail stretched between anchor points offers a modern, lightweight shading solution, popular for its clean visual style.' },
+      ],
+    } };
+  }
+}
+</script>
+</body>
+</html>

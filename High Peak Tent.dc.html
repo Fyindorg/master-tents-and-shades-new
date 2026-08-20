@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<dc-import name="ProductPage" hint-size="100%,2000px" dc-props="{{ productProps }}"></dc-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      productProps: {
+        heroImg: 'img/highpeak-tent.jpg',
+        heroPos: '55% 29%',
+        heroTitle: 'High Peak Tent',
+        blocks: [
+          { t: 'h1', text: 'High Peak Tent Manufacturers in Dubai for Hotel Dining, Restaurant Terraces and Outdoor Events', align: 'center' },
+          { t: 'p', text: "This unique structure has a bell-shaped roof that comes in various sizes from 6m to 40m. By combining it with A-frame and multi-sided units, you can create a distinctive and versatile space for your hotel or restaurant. The tent is spacious and customizable, offering a memorable experience for guests. High Peak Canopy Tents are not your regular event shelters. They feature striking bell-shaped roofs that can turn any outdoor wedding or event into a remarkable experience. You can mix them with A-frame tents and pagoda structures to design a one-of-a-kind space. The tents are sturdy with an aluminum frame and a white or transparent roof for natural light. You can personalize the sides with options like white or transparent PVC walls, glass panels, insulated sandwich panels, or ABS panels to match your event's style. If you want your wedding or event to be unique, a high peak tent is a great choice with its special design and customization possibilities, leaving a lasting impression on your guests." },
+        ],
+        relatedProducts: ['Event Tents','Steel Tents','Aluminium Tents','Labor Tents','Wedding Tents','High Peak Tents','Gazebo Tents','Dome Tents'],
+        relatedOther: ['Car Parking Shades','Pergola Shades','Cat Ladders','Umbrellas','Awnings','Steel Works','Tensile Shades','Swimming Pool Shades'],
+      },
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<dc-import name="ProductPage" hint-size="100%,2000px" dc-props="{{ productProps }}"></dc-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      productProps: {
+        heroImg: 'img/GAZEBO-TENTS.jpeg',
+        heroPos: '55% 29%',
+        heroTitle: 'Pergola Designs',
+        blocks: [
+          { t: 'h1', text: 'Gazebo Tent Manufacturers in Dubai for Hotel Gardens, Resorts and Outdoor Dining Areas', align: 'center' },
+          { t: 'p', text: "Master Tents and Shades LLC makes and sells gazebo tents in the UAE, including Dubai and other Gulf regions like Sharjah, Abu Dhabi, Ajman, Al Ain, Umm Al Quwain, Fujairah, Oman, and Saudi Arabia. These tents provide a unique outdoor structure. The standard Gazebo Tent has a side height of 2.5m and comes in sizes of 3*3m, 4*4m, 5*5m, and 6*6m. The framework and joints are made from aluminum alloy. Putting on the roof cover is simple as it uses eyelets and sliding plastic resin balls to secure it. The Gazebo Tents' shade can be used alone or combined with a rain gutter for a bigger space and a distinct style." },
+        ],
+        relatedProducts: ['Event Tents','Steel Tents','Aluminium Tents','Labor Tents','Wedding Tents','High Peak Tents','Gazebo Tents','Dome Tents'],
+        relatedOther: ['Car Parking Shades','Pergola Shades','Cat Ladders','Umbrellas','Awnings','Steel Works','Tensile Shades','Swimming Pool Shades'],
+      },
+    };
+  }
+}
+</script>
+</body>
+</html>

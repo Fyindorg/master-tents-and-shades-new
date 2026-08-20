@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<dc-import name="BlogPost" hint-size="100%,1600px" dc-props="{{ p }}"></dc-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return { p: {
+      dayNum: '24', views: '29990',
+      img: 'img/Arch-design-Parking-shades-861x646x0x0x860x646x1721129040.webp',
+      date: '23/07/2024', time: '5:33 AM',
+      title: 'Is it good to park your car in the shade?',
+      intro: 'Nothing beats a nicely shaded parking spot protected from the sun\u2019s heat. Many drivers will happily take the extra time to find one, especially in places with intense summer heat like the UAE, where prolonged sun exposure causes lasting damage to a vehicle\u2019s look, comfort, and performance.',
+      sections: [
+        { heading: 'Parking Shades Are Increasing in Popularity', body: 'Parking shade structures are now seen as cost-effective assets that do more than protect vehicles — they add to a property\u2019s appeal for tenants and customers. Shaded parking is becoming a standard expectation across commercial sites, residential communities, and retail developments.' },
+        { heading: 'How Do Shade Structures Improve Parking', body: 'The biggest benefit of a shade structure is sun and weather protection. A vehicle left in direct sunlight can heat up dramatically compared with one parked under shade, and that temperature difference matters over the long run for preserving a car\u2019s condition.' },
+        { heading: 'What Happens to Vehicles Unprotected from Sunlight', body: 'Unshaded vehicles face several forms of damage over time: paint fades faster under constant UV exposure; interior surfaces like seats, steering wheels and dashboards can crack from extreme heat; tires deteriorate more quickly as UV exposure accelerates rubber dry rot; and batteries lose expected lifespan as heat causes fluid to evaporate faster.' },
+      ],
+    } };
+  }
+}
+</script>
+</body>
+</html>
