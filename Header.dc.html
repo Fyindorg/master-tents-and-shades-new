@@ -7,6 +7,11 @@
 </head>
 <body>
 <x-dc>
+<helmet>
+<style>
+@keyframes mtsDropdownIn { from { opacity: 0; transform: translateY(-6px) scale(.98); } to { opacity: 1; transform: translateY(0) scale(1); } }
+</style>
+</helmet>
 
 <div style="background:#ffffff;">
   <div style="background:#ffffff;">
@@ -42,26 +47,33 @@
       <nav>
         <ul style="display:flex;align-items:center;gap:24px;list-style:none;margin:0;padding:0;">
           <sc-for list="{{menu}}" as="item" hint-placeholder-count="6">
-            <li style="position:relative;" onMouseEnter="{{ item.openThis }}" onMouseLeave="{{ closeMenu }}">
+            <li ref="{{ item.liRef }}" style="position:relative;" onMouseEnter="{{ item.openThis }}" onMouseLeave="{{ closeMenu }}">
               <a href="{{ item.href }}" style="display:block;padding-block:16px;font-size:18px;font-weight:500;letter-spacing:-0.4px;color:#1F4357;white-space:nowrap;">{{ item.label }}</a>
               <sc-if value="{{ item.hasChildren }}" hint-placeholder-val="{{ false }}">
                 <sc-if value="{{ item.isOpen }}" hint-placeholder-val="{{ false }}">
-                  <ul style="position:absolute;left:0;top:100%;z-index:50;min-width:260px;border:1px solid rgba(0,0,0,0.1);background:#ffffff;padding-block:4px;box-shadow:0 10px 25px rgba(0,0,0,0.12);list-style:none;margin:0;">
+                  <div ref="{{ item.panelRef }}" style="position:fixed;left:{{ item.dropdownLeft }}px;top:{{ item.dropdownTop }}px;z-index:50;animation:mtsDropdownIn .16s ease-out;">
+                    <div style="position:absolute;left:{{ item.arrowLeft }}px;top:-6px;width:12px;height:12px;background:#ffffff;border-radius:2px;box-shadow:-2px -2px 4px rgba(0,0,0,0.04);transform:rotate(45deg);"></div>
+                    <ul style="position:relative;min-width:260px;max-width:92vw;max-height:70vh;overflow:auto;border-radius:12px;background:#ffffff;padding:6px 0;box-shadow:0 16px 40px rgba(31,67,87,0.16);list-style:none;margin:0;">
                     <sc-for list="{{item.children}}" as="child" hint-placeholder-count="4">
-                      <li style="position:relative;" onMouseEnter="{{ child.openFlyout }}">
-                        <a href="{{ child.href }}" style="display:flex;align-items:center;justify-content:space-between;gap:12px;white-space:nowrap;padding:8px 16px;font-size:16px;font-weight:500;letter-spacing:-0.5px;color:#BEA16A;">
+                      <li ref="{{ child.childRef }}" style="position:relative;" onMouseEnter="{{ child.openFlyout }}">
+                        <a href="{{ child.href }}" style="display:flex;align-items:center;justify-content:space-between;gap:12px;white-space:nowrap;padding:8px 2px 8px 12px;font-size:16px;font-weight:500;letter-spacing:-0.5px;color:#BEA16A;border-radius:8px;margin:0 4px;transition:background-color .18s ease,padding-left .18s ease;" style-hover="background-color:#F8F3E6;padding-left:13px;color:#1F4357;">
+                          <sc-if value="{{ child.flyoutFlipped }}" hint-placeholder-val="{{ false }}">
+                            <span style="font-size:14px;">‹</span>
+                          </sc-if>
                           {{ child.label }}
-                          <sc-if value="{{ child.hasChildren }}" hint-placeholder-val="{{ false }}">
+                          <sc-if value="{{ child.hasChildrenNotFlipped }}" hint-placeholder-val="{{ false }}">
                             <span style="font-size:14px;">›</span>
                           </sc-if>
                         </a>
                         <sc-if value="{{ child.hasChildren }}" hint-placeholder-val="{{ false }}">
                           <sc-if value="{{ child.flyoutOpen }}" hint-placeholder-val="{{ false }}">
-                            <ul style="position:absolute;left:100%;top:-4px;z-index:50;min-width:260px;border:1px solid rgba(0,0,0,0.1);background:#ffffff;padding-block:4px;box-shadow:0 10px 25px rgba(0,0,0,0.12);list-style:none;margin:0;">
-                              <sc-for list="{{child.children}}" as="grandchild" hint-placeholder-count="6">
-                                <li><a href="{{ grandchild.href }}" style="display:block;white-space:nowrap;padding:8px 16px;font-size:16px;font-weight:500;color:#BEA16A;">{{ grandchild.label }}</a></li>
-                              </sc-for>
-                            </ul>
+                            <div ref="{{ child.flyoutRef }}" style="position:fixed;left:{{ child.flyoutLeft }}px;top:{{ child.flyoutTop }}px;z-index:60;min-width:260px;border-radius:12px;background:#ffffff;padding-block:6px;box-shadow:0 16px 40px rgba(31,67,87,0.16);animation:mtsDropdownIn .16s ease-out;">
+                              <ul style="list-style:none;margin:0;padding:0;">
+                                <sc-for list="{{child.children}}" as="grandchild" hint-placeholder-count="6">
+                                  <li><a href="{{ grandchild.href }}" style="display:block;white-space:nowrap;padding:8px 4px 8px 12px;font-size:16px;font-weight:500;color:#BEA16A;border-radius:8px;margin:0 4px;transition:background-color .18s ease,padding-left .18s ease;" style-hover="background-color:#F8F3E6;padding-left:13px;color:#1F4357;">{{ grandchild.label }}</a></li>
+                                </sc-for>
+                              </ul>
+                            </div>
                           </sc-if>
                         </sc-if>
                       </li>
@@ -135,7 +147,9 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
-  state = { scrolled: false, openIndex: null, mobileOpen: false, mobileOpenIndex: null, isMobile: false, flyoutKey: null };
+  state = { scrolled: false, openIndex: null, mobileOpen: false, mobileOpenIndex: null, isMobile: false, flyoutKey: null, dropdownMeta: {}, flyoutMeta: {} };
+  liRefs = {};
+  childRefs = {};
 
   componentDidMount() {
     this._onScroll = () => this.setState({ scrolled: window.scrollY > 260 });
@@ -150,7 +164,54 @@ class Component extends DCLogic {
     window.removeEventListener('resize', this._onResize);
   }
 
-  openMenu(i) { this.setState({ openIndex: i, flyoutKey: null }); }
+  openMenu(i) {
+    this.setState({ openIndex: i, flyoutKey: null });
+    const anchor = this.liRefs[i];
+    if (anchor) {
+      const r = anchor.getBoundingClientRect();
+      this.computeDropdownPos(i, r, 280);
+    }
+  }
+  computeDropdownPos(i, anchorRect, panelWidth) {
+    const anchorCenterX = anchorRect.left + anchorRect.width / 2;
+    const vw = window.innerWidth;
+    let left = anchorCenterX - panelWidth / 2;
+    left = Math.max(8, Math.min(left, vw - panelWidth - 8));
+    let arrowLeft = anchorCenterX - left - 6;
+    arrowLeft = Math.max(12, Math.min(arrowLeft, panelWidth - 24));
+    const top = Math.round(anchorRect.bottom);
+    this.setState(s => ({ dropdownMeta: { ...s.dropdownMeta, [i]: { top, left, arrowLeft } } }));
+  }
+  measureDropdown(i, panelEl) {
+    const anchor = this.liRefs[i];
+    if (!anchor || !panelEl) return;
+    const anchorRect = anchor.getBoundingClientRect();
+    const panelRect = panelEl.getBoundingClientRect();
+    this.computeDropdownPos(i, anchorRect, panelRect.width);
+  }
+  openFlyout(key) {
+    this.setState({ flyoutKey: key });
+    const anchor = this.childRefs[key];
+    if (anchor) {
+      const r = anchor.getBoundingClientRect();
+      this.computeFlyoutPos(key, r, 260);
+    }
+  }
+  computeFlyoutPos(key, anchorRect, panelWidth) {
+    const vw = window.innerWidth;
+    let left = anchorRect.right;
+    let flipped = false;
+    if (left + panelWidth > vw - 8) { left = Math.max(8, anchorRect.left - panelWidth); flipped = true; }
+    const top = Math.round(anchorRect.top);
+    this.setState(s => ({ flyoutMeta: { ...s.flyoutMeta, [key]: { top, left, flipped } } }));
+  }
+  measureFlyout(key, panelEl) {
+    const anchor = this.childRefs[key];
+    if (!anchor || !panelEl) return;
+    const anchorRect = anchor.getBoundingClientRect();
+    const panelRect = panelEl.getBoundingClientRect();
+    this.computeFlyoutPos(key, anchorRect, panelRect.width);
+  }
   closeMenu() { this.setState({ openIndex: null }); }
   toggleMobile() { this.setState(s => ({ mobileOpen: !s.mobileOpen })); }
   toggleMobileItem(i) { this.setState(s => ({ mobileOpenIndex: s.mobileOpenIndex === i ? null : i })); }
@@ -227,11 +288,22 @@ class Component extends DCLogic {
       mobileToggleLabel: this.state.mobileOpenIndex === i ? '\u2212' : '+',
       openThis: () => this.openMenu(i),
       toggleThis: () => this.toggleMobileItem(i),
+      liRef: (el) => { if (el) this.liRefs[i] = el; },
+      panelRef: (el) => { if (el) requestAnimationFrame(() => this.measureDropdown(i, el)); },
+      dropdownTop: this.state.dropdownMeta[i]?.top ?? 140,
+      dropdownLeft: this.state.dropdownMeta[i]?.left ?? 100,
+      arrowLeft: this.state.dropdownMeta[i]?.arrowLeft ?? 130,
       children: (item.children || []).map((c, ci) => ({
         ...c,
         hasChildren: !!c.children,
         flyoutOpen: this.state.flyoutKey === `${i}-${ci}`,
-        openFlyout: () => this.setState({ flyoutKey: `${i}-${ci}` }),
+        hasChildrenNotFlipped: !!c.children && !(this.state.flyoutMeta[`${i}-${ci}`]?.flipped),
+        flyoutFlipped: !!c.children && !!(this.state.flyoutMeta[`${i}-${ci}`]?.flipped),
+        openFlyout: () => this.openFlyout(`${i}-${ci}`),
+        flyoutRef: (el) => { if (el) requestAnimationFrame(() => this.measureFlyout(`${i}-${ci}`, el)); },
+        childRef: (el) => { if (el) this.childRefs[`${i}-${ci}`] = el; },
+        flyoutTop: this.state.flyoutMeta[`${i}-${ci}`]?.top ?? 140,
+        flyoutLeft: this.state.flyoutMeta[`${i}-${ci}`]?.left ?? 400,
       })),
     }));
 
