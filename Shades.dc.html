@@ -20,10 +20,10 @@
 
 <dc-import name="Header" hint-size="100%,140px"></dc-import>
 
-<section style="position:relative;height:400px;overflow:hidden;">
-  <sc-if value="{{ ready }}" hint-placeholder-val="{{ false }}">
-    <img src="{{ heroSrc }}" alt="Shades" style="display:block;width:100%;height:400px;object-fit:cover;"/>
-  </sc-if>
+<section style="position:relative;height:400px;overflow:hidden;background-attachment:fixed;">
+  <sc-for list="{{heroLayers}}" as="layer" hint-placeholder-count="2">
+    <div style="{{ layer.style }}"></div>
+  </sc-for>
   <div style="position:absolute;inset:0;background:rgba(0,0,0,0.15);"></div>
 </section>
 
@@ -42,14 +42,12 @@
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;">
         <sc-for list="{{cards}}" as="c" hint-placeholder-count="7">
           <div>
-            <sc-if value="{{ ready }}" hint-placeholder-val="{{ false }}">
               <sc-if value="{{ c.href }}" hint-placeholder-val="{{ false }}">
-                <a href="{{ c.href }}"><img src="{{ c.img }}" alt="{{ c.title }}" style="width:100%;height:180px;object-fit:cover;display:block;"/></a>
+                <a href="{{ c.href }}"><img src="{{c.img}}" alt="{{ c.title }}" style="width:100%;height:180px;object-fit:cover;display:block;"/></a>
               </sc-if>
               <sc-if value="{{ c.noHref }}" hint-placeholder-val="{{ false }}">
-                <img src="{{ c.img }}" alt="{{ c.title }}" style="width:100%;height:180px;object-fit:cover;display:block;"/>
+                <img src="{{c.img}}" alt="{{ c.title }}" style="width:100%;height:180px;object-fit:cover;display:block;"/>
               </sc-if>
-            </sc-if>
             <p style="margin:8px 0 4px 0;text-align:center;font-size:18px;font-weight:500;color:#1F4357;">{{ c.title }}</p>
             <p style="margin:0;text-align:justify;font-size:15px;line-height:1.6;color:#000;">{{ c.text }}</p>
           </div>
@@ -107,6 +105,9 @@ class Component extends DCLogic {
   }
   renderVals() {
     const heroSrcs = ['img/sun-slide-13.jpg','img/sun-slide-14.jpg','img/sun-slide-15.jpg','img/sun-slide-16.jpg','img/sun-slide-17.jpg','img/sun-slide-18.jpg'];
+    const heroLayers = heroSrcs.map((src, i) => ({
+      style: `position:absolute;inset:0;background-image:url(${src});background-size:cover;background-position:center;background-attachment:fixed;opacity:${i === this.state.activeSlide ? 1 : 0};transition:opacity 1.2s ease-in-out;`,
+    }));
     const cardsRaw = [
       { img: 'img/awinings-860x646x0x0x860x646x1722151643.webp', title: 'Awning Shades', href: 'Awning Shades.dc.html', text: 'Awnings, which are versatile exterior coverings typically made of fabric or other materials, provide a range of benefits for homes and businesses. They offer effective sun protection by creating shade' },
       { img: 'img/New-Pergola-Designs-860x640x0x0x860x640x1721141039.webp', title: 'Pergola Shades', href: 'Pergola Shades.dc.html', text: 'Outdoor garden pergolas car parking shades in UAE, and other Gulf Regions like Oman and The best way to enjoy outdoor weather is to put a retractable pergola, fixed pergola, motorized pergola, flat roof pergola' },
@@ -120,6 +121,7 @@ class Component extends DCLogic {
     return {
       ready: this.state.ready,
       heroSrc: heroSrcs[this.state.activeSlide],
+      heroLayers,
       cards,
       sent: this.state.sent,
       submitLabel: this.state.sending ? 'Sending...' : 'Send →',

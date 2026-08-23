@@ -20,8 +20,10 @@
 
 <dc-import name="Header" hint-size="100%,140px"></dc-import>
 
-<section style="position:relative;height:420px;overflow:hidden;">
-  <img src="{{ heroSrc }}" alt="Pergola shade designs" style="display:block;width:100%;height:420px;object-fit:cover;"/>
+<section style="position:relative;height:420px;overflow:hidden;background-attachment:fixed;">
+  <sc-for list="{{heroLayers}}" as="layer" hint-placeholder-count="2">
+    <div style="{{ layer.style }}"></div>
+  </sc-for>
   <div style="position:absolute;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.25);"></div>
 </section>
 
@@ -129,8 +131,12 @@ class Component extends DCLogic {
   }
   renderVals() {
     const heroSrcs = ['img/6.webp', 'img/8.jpg', 'img/7.jpg', 'img/1.webp'];
+    const heroLayers = heroSrcs.map((src, i) => ({
+      style: `position:absolute;inset:0;background-image:url(${src});background-size:cover;background-position:center;background-attachment:fixed;opacity:${i === this.state.activeSlide ? 1 : 0};transition:opacity 1.2s ease-in-out;`,
+    }));
     return {
       heroSrc: heroSrcs[this.state.activeSlide],
+      heroLayers,
       features: [
         'Roofing options: Pergolas Designs can have a variety of roofing options, including open slats, lattice, fabric canopies, or solid roofs. Each option provides a different level of shade and protection from the elements.',
         'Lighting: Adding lighting to a pergola can create a warm and inviting atmosphere for evening gatherings. Options include string lights, lanterns, sconces, or even built-in LED lights.',
