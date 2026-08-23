@@ -185,7 +185,7 @@ class Component extends DCLogic {
     return {
       hasHero: !!heroImg,
       heroTitle: this.props.heroTitle ?? null,
-      heroStyle: `position:relative;height:420px;overflow:hidden;background-image:url(${heroImg});background-size:cover;background-position:${this.props.heroPos || 'center'};display:flex;align-items:flex-end;`,
+      heroStyle: `position:relative;height:420px;overflow:hidden;background-image:url(${heroImg});background-size:cover;background-position:${this.props.heroPos || 'center'};background-attachment:fixed;display:flex;align-items:flex-end;`,
       sections,
       stats: [
         { label: 'Happy Clients', display: this.state.statsCounts[0] },
